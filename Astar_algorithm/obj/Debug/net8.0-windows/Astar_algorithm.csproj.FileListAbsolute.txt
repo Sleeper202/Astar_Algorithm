@@ -1,0 +1,16 @@
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\bin\Debug\net8.0-windows\Astar_algorithm.exe
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\bin\Debug\net8.0-windows\Astar_algorithm.deps.json
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\bin\Debug\net8.0-windows\Astar_algorithm.runtimeconfig.json
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\bin\Debug\net8.0-windows\Astar_algorithm.dll
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\bin\Debug\net8.0-windows\Astar_algorithm.pdb
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.Form1.resources
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.csproj.GenerateResource.cache
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.GeneratedMSBuildEditorConfig.editorconfig
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.AssemblyInfoInputs.cache
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.AssemblyInfo.cs
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.csproj.CoreCompileInputs.cache
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.dll
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\refint\Astar_algorithm.dll
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.pdb
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.genruntimeconfig.cache
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\ref\Astar_algorithm.dll
