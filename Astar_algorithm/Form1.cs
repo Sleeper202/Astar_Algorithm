@@ -34,28 +34,36 @@ namespace Astar_algorithm
             }
         }
         private List<Node> nodes;
+        private List<Node> path;
         private void InitializeNodes()
         {
             nodes = new List<Node>();
 
-            Node node0 = new Node { Name = "A", x = 200, y = 50 };
-            Node node1 = new Node { Name = "B", x = 50, y = 150 };
-            Node node2 = new Node { Name = "C", x = 150, y = 150 };
-            Node node3 = new Node { Name = "D", x = 250, y = 150 };
-            Node node4 = new Node { Name = "E", x = 350, y = 150 };
-            Node node5 = new Node { Name = "G", x = 200, y = 250 };
-            Node node6 = new Node { Name = "H", x = 300, y = 250 };
-            Node node7 = new Node { Name = "I", x = 250, y = 350 };
+            Node node0 = new Node { Name = "A", x = 50, y = 200 };
+            Node node1 = new Node { Name = "B", x = 100, y = 100 };
+            Node node2 = new Node { Name = "C", x = 200, y = 100 };
+            Node node3 = new Node { Name = "D", x = 250, y = 200 };
+            Node node4 = new Node { Name = "E", x = 150, y = 200 };
+            Node node5 = new Node { Name = "F", x = 150, y = 300 };
 
-            node0.Edges.Add(new Edge(node1, 1));
-            node0.Edges.Add(new Edge(node2, 1));
-            node0.Edges.Add(new Edge(node3, 1));
+            node0.Edges.Add(new Edge(node1, 2));
             node0.Edges.Add(new Edge(node4, 1));
-            node2.Edges.Add(new Edge(node5, 1));
+            node0.Edges.Add(new Edge(node5, 3));
+            node1.Edges.Add(new Edge(node0, 2));
+            node1.Edges.Add(new Edge(node2, 1));
+            node2.Edges.Add(new Edge(node1, 1));
+            node2.Edges.Add(new Edge(node3, 2));
+            node2.Edges.Add(new Edge(node4, 1));
+            node3.Edges.Add(new Edge(node2, 2));
+            node3.Edges.Add(new Edge(node4, 5));
             node3.Edges.Add(new Edge(node5, 1));
-            node4.Edges.Add(new Edge(node6, 1));
-            node5.Edges.Add(new Edge(node7, 1));
-            node6.Edges.Add(new Edge(node5, 1));
+            node4.Edges.Add(new Edge(node0, 1));
+            node4.Edges.Add(new Edge(node2, 1));
+            node4.Edges.Add(new Edge(node3, 5));
+            node4.Edges.Add(new Edge(node5, 1));
+            node5.Edges.Add(new Edge(node0, 3));
+            node5.Edges.Add(new Edge(node3, 1));
+            node5.Edges.Add(new Edge(node4, 1));
 
 
             nodes.Add(node0);
@@ -63,9 +71,7 @@ namespace Astar_algorithm
             nodes.Add(node2);
             nodes.Add(node3);
             nodes.Add(node4);
-            nodes.Add(node5);
-            nodes.Add(node6);
-            nodes.Add(node7);
+            nodes.Add(node5);            
         }
         private Node GetNodeFromInput(string input)
         {
@@ -118,7 +124,6 @@ namespace Astar_algorithm
 
                         // Cập nhật các giá trị G, H, và Parent
                         edge.Destination.G = tentativeG;
-                        edge.Destination.H = Heuristic(edge.Destination, goal);
                         edge.Destination.Parent = current;
                     }
                 }
@@ -130,24 +135,24 @@ namespace Astar_algorithm
             {
                 var path = new List<Node>();
                 Node current = endNode;
+                
 
                 while (current != null)
                 {
                     path.Add(current);
                     current = current.Parent;
                 }
-                path.Reverse();
+                //path.Reverse();
                 return path;
             }
-
-            private float Heuristic(Node a, Node b)
-            {
-                // Sử dụng khoảng cách Euclide làm heuristic (nếu có tọa độ)
-                // return Math.Sqrt(Math.Pow(a.X - b.X, 2) + Math.Pow(a.Y - b.Y, 2));
-                return 0; // Cập nhật theo cách bạn muốn
-            }
+        
+            
         }
-
+        private float Heuristic(Node a, Node b)
+        {
+            // Sử dụng khoảng cách Euclide làm heuristic (nếu có tọa độ)
+            return (float)Math.Sqrt(Math.Pow(a.x - b.x, 2) + Math.Pow(a.y - b.y, 2)) / 100;
+        }
         private void btnFindPath_Click(object sender, EventArgs e)
         {
 
@@ -155,20 +160,43 @@ namespace Astar_algorithm
             // Lấy điểm bắt đầu và kết thúc từ TextBox
             Node startNode = GetNodeFromInput(cbStart.Text);
             Node endNode = GetNodeFromInput(cbEnd.Text);
+            //Tính H
+            foreach (var node in nodes)
+            {
+                node.H= Heuristic(node,endNode);
+            }
+            //Vẽ lại
+            panel1.Invalidate();
 
             // Gọi hàm tìm đường
             AStar aStar = new AStar();
-            List<Node> path = aStar.FindPath(startNode, endNode);
+            path = aStar.FindPath(startNode, endNode);
 
             // Hiển thị kết quả
             if (path != null)
             {
-                lblResult.Text = "Kết quả:\r\nĐường đi: " + string.Join(" -> ", path.Select(n => n.Name));
+                var p = path;
+                p.Reverse();
+                lblResult.Text = "Kết quả:\r\nĐường đi: " + string.Join(" -> ", p.Select(n => n.Name));
+                panel1.Paint += new PaintEventHandler(Drawpath);
             }
             else
             {
                 lblResult.Text = "Kết quả:\r\nKhông tìm thấy đường!";
             }
+        }
+        private void Drawpath(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            foreach (var node in path)
+            {
+                g.FillEllipse(Brushes.Yellow, node.x, node.y, 30, 30);
+                g.DrawString(node.Name, new Font("Arial", 10), Brushes.Black, node.x, node.y);
+                if (node.Parent != null)
+                g.DrawLine(Pens.Red, node.x + 15, node.y + 15, node.Parent.x + 15, node.Parent.y + 15);
+            }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -187,7 +215,7 @@ namespace Astar_algorithm
             {
                 foreach (var edge in node.Edges)
                 {
-                    g.DrawLine(Pens.Black, node.x+15,node.y+15,edge.Destination.x+15,edge.Destination.y+15);
+                    g.DrawLine(Pens.Black, node.x + 15, node.y + 15, edge.Destination.x + 15, edge.Destination.y + 15);
                 }
             }
         }

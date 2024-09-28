@@ -14,3 +14,4 @@ D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-wind
 D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.pdb
 D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.genruntimeconfig.cache
 D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\ref\Astar_algorithm.dll
+D:\ManYinHong 96044\Trí tuệ nhân tạo\Astar_algorithm\obj\Debug\net8.0-windows\Astar_algorithm.Properties.Resources.resources

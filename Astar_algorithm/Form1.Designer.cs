@@ -85,7 +85,7 @@
             // cbStart
             // 
             cbStart.FormattingEnabled = true;
-            cbStart.Items.AddRange(new object[] { "A", "B", "C", "D", "E", "G", "H", "I" });
+            cbStart.Items.AddRange(new object[] { "A", "B", "C", "D", "E", "F" });
             cbStart.Location = new Point(691, 105);
             cbStart.Name = "cbStart";
             cbStart.Size = new Size(151, 28);
@@ -94,7 +94,7 @@
             // cbEnd
             // 
             cbEnd.FormattingEnabled = true;
-            cbEnd.Items.AddRange(new object[] { "A", "B", "C", "D", "E", "G", "H", "I" });
+            cbEnd.Items.AddRange(new object[] { "A", "B", "C", "D", "E", "F" });
             cbEnd.Location = new Point(691, 194);
             cbEnd.Name = "cbEnd";
             cbEnd.Size = new Size(151, 28);
