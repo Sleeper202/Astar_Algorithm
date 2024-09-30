@@ -59,5 +59,25 @@ namespace Astar_algorithm.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2024_09_30_212654__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2024-09-30 212654 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5173044688530_fc0375770cdf99a049e123fe4784ef71 {
+            get {
+                object obj = ResourceManager.GetObject("z5173044688530_fc0375770cdf99a049e123fe4784ef71", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
