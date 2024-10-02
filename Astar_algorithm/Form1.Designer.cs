@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
             btnFindPath = new Button();
             label1 = new Label();
@@ -36,11 +35,13 @@
             lblResult = new Label();
             cbStart = new ComboBox();
             cbEnd = new ComboBox();
+            btnStart = new Button();
+            btnEnd = new Button();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImage = Properties.Resources.Screenshot_2024_09_30_212654__1_;
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 800);
@@ -103,11 +104,33 @@
             cbEnd.Size = new Size(151, 28);
             cbEnd.TabIndex = 8;
             // 
+            // btnStart
+            // 
+            btnStart.Location = new Point(859, 42);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(94, 29);
+            btnStart.TabIndex = 9;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
+            // 
+            // btnEnd
+            // 
+            btnEnd.Location = new Point(859, 131);
+            btnEnd.Name = "btnEnd";
+            btnEnd.Size = new Size(94, 29);
+            btnEnd.TabIndex = 10;
+            btnEnd.Text = "End";
+            btnEnd.UseVisualStyleBackColor = true;
+            btnEnd.Click += btnEnd_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1064, 820);
+            Controls.Add(btnEnd);
+            Controls.Add(btnStart);
             Controls.Add(cbEnd);
             Controls.Add(cbStart);
             Controls.Add(lblResult);
@@ -130,5 +153,7 @@
         private Label lblResult;
         private ComboBox cbStart;
         private ComboBox cbEnd;
+        private Button btnStart;
+        private Button btnEnd;
     }
 }
