@@ -145,7 +145,7 @@ namespace Astar_algorithm
             {
                 var p = path;
                 p.Reverse();
-                lblResult.Text ="Độ dài quãng đường:\r\n" + ((int)Heuristic(startNode,endNode)).ToString()+"m";
+                lblResult.Text ="Độ dài quãng đường:\r\n" + ((int)endNode.G).ToString()+"m";
                 panel1.Invalidate();
             }
             else
